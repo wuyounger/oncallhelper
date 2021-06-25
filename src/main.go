@@ -126,7 +126,7 @@ func main() {
 
 	c1 := cron.New() //meetingHostMembers
 	//meetingHostMembers定时任务
-	c1.AddFunc(meetingHostSpec, func() {
+	c1.AddFunc("@every 3s", func() {
 		OnCallHelper(meetingHostMembers, THURSDAY, TestGroup, meetingHostFormat, meetingHostIndex)
 		meetingHostIndex += 1
 	})
